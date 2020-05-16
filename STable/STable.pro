@@ -20,14 +20,16 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     memory_management.cpp \
-    renderarea.cpp
+    renderarea.cpp \
+    table.cpp
 
 
 
 HEADERS += \
     mainwindow.h \
     memory_management.h \
-    renderarea.h
+    renderarea.h \
+    table.h
 
 FORMS +=
 

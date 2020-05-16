@@ -5,6 +5,7 @@
 #include "renderarea.h"
 #include "mainwindow.h"
 #include "memory_management.h"
+#include "table.h"
 #include <set>
 
 vector <vector<QString>> segments={{"17","1","0","300"},
@@ -19,15 +20,13 @@ QMap<int,QColor> ProcessColors;
 QVector<QColor> Palette;
 vector <vector<string> >segmentTableData ;
 vector <vector<string> >holeTableData;
-vector <vector<float>> result;
 set <QString> PIDS;
 int numOfUsedColors=0;
 int notSize;
 int memorySizeInt=2000;
 vector<vector<string>>memory;
 vector<vector<string>>notSizeProcess;
-
-
+vector<vector<string>> results;
 
 
 int main(int argc, char *argv[])

@@ -64,7 +64,7 @@ std::vector<std::vector<std::string>> deleteProcess(std::string name)
             i[0] = " ";
             i[1] = "Hole";
         }
-    }   
+    }
 
     return painting();
 
@@ -119,66 +119,10 @@ vector<vector<string>> BestFit(vector<vector<string>>& memory,vector<vector<stri
         //*******************************
     }
     segment_table.clear();
-    
-   return painting();
-   
-}
-
-/*
-vector<vector<string>> FirstFit(vector<vector<string>>& memory,vector<vector<string>>& segment_table ,vector<vector<string>>&notSizeProcess)
-{
-    for (int counter = 0;counter < segment_table.size();counter++)
-    {
-        string process_name = segment_table.at(counter).at(0), segment_name = segment_table.at(counter).at(1);
-        int seg_size = stoi(segment_table.at(counter).at(2));
-        int best_index, best_size;
-        vector<vector<int>>holes_ranking;
-        notSize = 1;
-        for (int i = 0;i < memory.size();i++)
-        {
-            int hole_size = 0;
-            while (i < memory.size() && memory.at(i).at(1) == "Hole")    //count the hole size*****
-            {
-                hole_size++;
-                i++;
-            }
-            vector<int>temp;
-            if (hole_size >= seg_size)
-            {
-                temp.push_back(hole_size);          //size of the current hole
-                temp.push_back(i - hole_size);  //the index of the current hole
-                holes_ranking.push_back(temp);
-            }
-        }
-        if (holes_ranking.empty())
-        {
-            notSize = 0;
-            //--------------modifying ----------------
-            notSizeProcess.resize(segment_table.size());
-                    for(int i=0;i<segment_table.size();i++){
-                        notSizeProcess[i].push_back(segment_table[i][0]);
-                        notSizeProcess[i].push_back(segment_table[i][1]);
-                        notSizeProcess[i].push_back(segment_table[i][2]);
-                    }
-            //-------------------------
-            return deleteProcess(process_name);
-        }
-        //sort(holes_ranking.begin(), holes_ranking.end());
-        best_size = holes_ranking.at(0).at(0);
-        best_index = holes_ranking.at(0).at(1);
-        for (int i = best_index;i < best_index + seg_size;i++)
-        {
-            memory.at(i).at(0) = process_name;
-            memory.at(i).at(1) = segment_name;
-        }
-        //*******************************
-    }
-    segment_table.clear();
 
    return painting();
 
 }
-*/
 
 vector<vector<string>> FirstFit(vector<vector<string>>& memory,vector<vector<string>>& SegmentTeble ,vector<vector<string>>&notSizeProcess) {
 
@@ -218,8 +162,8 @@ vector<vector<string>> FirstFit(vector<vector<string>>& memory,vector<vector<str
             }
             else{hole_size=0;}
         }
-        if (notSize == 0) { 
-            // not found fit size  proses not enter to memory
+        if (notSize == 0) {
+            /* not found fit size  proses not enter to memory   */
 
             //---------------   modifying  --------------
                            notSizeProcess.resize(SegmentTeble.size());
@@ -249,7 +193,19 @@ vector<vector<string>> FirstFit(vector<vector<string>>& memory,vector<vector<str
 
 }
 
-
-
-
-
+std::vector<std::vector<std::string>> showProcess(std::vector<std::vector<std::string>> segments,std::string process_name)
+{
+    std::vector<std::vector<std::string>> result;
+    for (auto& i : segments)
+    {
+        if (i[0] == process_name)
+                {
+                    result.resize(result.size() + 1);
+                    result[result.size() - 1].push_back(i[0]);
+                    result[result.size() - 1].push_back(i[1]);
+                    result[result.size() - 1].push_back(i[2]);
+                    result[result.size() - 1].push_back(i[3]);
+                }
+    }
+    return result;
+}

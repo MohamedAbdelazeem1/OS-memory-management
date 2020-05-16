@@ -21,10 +21,6 @@ vector<vector<string>> BestFit(vector<vector<string>>& memory, vector<vector<str
 
 vector<vector<string>> FirstFit(vector<vector<string>>& memory,vector<vector<string>>& SegmentTeble ,vector<vector<string>>&notSizeProcess);
 
-
-
-
-
-
+std::vector<std::vector<std::string>> showProcess(std::vector<std::vector<std::string>> segments,std::string process_name);
 
 #endif // MEMORY_MANAGEMENT_H

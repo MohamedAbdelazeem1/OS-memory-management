@@ -66,12 +66,13 @@ extern QVector<QColor> Palette;
 extern vector <vector<string> >segmentTableData ;
 extern vector <vector<string> >holeTableData;
 extern vector <vector<QString>> segments;
-extern vector <vector<float>> result;
+extern vector<vector<string>>results;
 extern int numOfUsedColors;
 extern set <QString> PIDS;
 extern int notSize;
 extern vector<vector<string>>memory;
 extern int memorySizeInt;
+extern vector<vector<string>>notSizeProcess;
 
 //! [0]
 class RenderArea : public QWidget

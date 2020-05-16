@@ -131,7 +131,6 @@ void RenderArea::paintEvent(QPaintEvent * /* event */)
     //painter.drawRect(rect);
 
 
-    colorGenerator(10);
 
 for(int i=0;i<segments.size();i++){
 
